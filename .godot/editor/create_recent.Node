@@ -1,2 +1,14 @@
-TextEdit
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+AnimationPlayer
+AnimationTree
+Camera2D
+Panel
+CollisionShape2D
+StaticBody2D
+AnimatedSprite2D
+CharacterBody2D
+Label
 Button
+TextEdit
