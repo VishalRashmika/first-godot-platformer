@@ -1,6 +1,6 @@
 res://world.tscn
-res://Player/character_body_2d.tscn
 res://main.tscn
-res://Player/player.gd
 res://BG.tscn
-res://BG.gd
+res://Frog.tscn
+res://Collectibles/cherry.tscn
+res://Player/character_body_2d.tscn

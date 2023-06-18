@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -41,5 +40,23 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.y > 0:
 		anim.play("Fall")
+	
+	if Game.playerHP <= 0:
+		queue_free()
+		
+		const SAVE_PATH = "res://savegame.bin"
+		var test_var = 10
+		var test_var2 = 0
+		var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		var data: Dictionary = {
+			"playerHP": test_var,
+			"Gold": test_var2,
+		}
+		# convert dict to JSON
+		var jstr = JSON.stringify(data)
+		file.store_line(jstr)
+	
+		get_tree().change_scene_to_file("res://main.tscn")
+
 
 	move_and_slide()
